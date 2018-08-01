@@ -1,9 +1,7 @@
 package com.tcs.venta.business;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import javax.annotation.PostConstruct;
 
 import org.springframework.stereotype.Component;
 
@@ -13,29 +11,7 @@ import com.tcs.venta.model.Producto;
 public class ProductoBusinessImp extends BaseBusiness implements ProductoBusiness {
 
 
-	@PostConstruct
-	public void postContruct() 
-	{
-		
-		productos = new ArrayList<>();
 
-		Producto producto = new Producto();
-		producto.setId(1L);
-		producto.setNombre("Detergente bol");
-		producto.setPrecio(3.5);
-		producto.setStock(230);
-		
-		Producto producto2 = new Producto();
-		producto2.setId(2L);
-		producto2.setNombre("Avena 3 ositos");
-		producto2.setPrecio(2.5);
-		producto2.setStock(500);
-		
-
-		productos.add(producto);
-		productos.add(producto2);
-		
-	}
 	
 	@Override
 	public List<Producto> listarProductos() 

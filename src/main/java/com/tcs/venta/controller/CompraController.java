@@ -1,6 +1,7 @@
 package com.tcs.venta.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -33,7 +34,7 @@ public class CompraController {
 	}
 	
 	@GetMapping("compra/cliente/{idCliente}")
-	public Compra getCompraByCliente(@PathVariable("idCliente") long idCliente) {
+	public Map<String, String> getCompraByCliente(@PathVariable("idCliente") long idCliente) {
 
 		return compraBusiness.getCompraByCliente(idCliente);
 

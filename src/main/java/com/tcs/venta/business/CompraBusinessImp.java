@@ -1,11 +1,9 @@
 package com.tcs.venta.business;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.annotation.PostConstruct;
 
 import org.springframework.stereotype.Component;
 
@@ -16,31 +14,6 @@ import com.tcs.venta.model.Compra;
 public class CompraBusinessImp extends BaseBusiness implements CompraBusiness {
 
 
-	@PostConstruct
-	public void postContruct()
-	{
-
-		compras = new ArrayList<>();
-
-		Compra compra = new Compra();
-		compra.setId(1L);
-		compra.setCantidad(3);
-		compra.setId_cliente(1L);
-		compra.setId_producto(1L);
-		compra.setMonto_total(300.2);
-
-
-		Compra compra2 = new Compra();
-		compra2.setId(2L);
-		compra2.setCantidad(5);
-		compra2.setId_cliente(2L);
-		compra2.setId_producto(2L);
-		compra2.setMonto_total(200.2);
-
-		compras.add(compra);
-		compras.add(compra2);
-
-	}
 
 	@Override
 	public List<Compra> listarCompras()
@@ -93,7 +66,7 @@ public class CompraBusinessImp extends BaseBusiness implements CompraBusiness {
 
 
 	@Override
-	public Compra getCompraByCliente(long idCliente) {
+	public Map<String, String>  getCompraByCliente(long idCliente) {
 		
 		
 		Map<String, String> comprasCliente = new HashMap<String, String>();
@@ -112,7 +85,7 @@ public class CompraBusinessImp extends BaseBusiness implements CompraBusiness {
 
 		
 		
-return null;
+return comprasCliente;
 	}
 	
 	
